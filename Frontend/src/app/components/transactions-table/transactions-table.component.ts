@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BlockchainService } from '../../services/blockchain.service';
 
 @Component({
   selector: 'app-transactions-table',
@@ -6,13 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./transactions-table.component.scss']
 })
 export class TransactionsTableComponent implements OnInit {
-  @Input() public transactions = [];
+  @Input()
+  public transactions = [];
 
-  
+  constructor(public blockchainService: BlockchainService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
 }
